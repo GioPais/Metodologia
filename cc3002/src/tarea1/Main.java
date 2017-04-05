@@ -3,15 +3,37 @@ package tarea1;
 public class Main {
 	
 	public static void main(String[] argv){
-		Pokemon c = new Pokemon("charmander",100,"fire",50);
-		Pokemon b = new Pokemon("bulbasaur",100,"planta",30);
+		Grass g1 = new Grass("chikorita",100,50);
+		Grass g2 = new Grass("bulbasaur",100,30);
+		Fire  f1 = new Fire("Charmander",100,50);
 		
-		c.status();
-		b.status();
+		g1.status();
+		g2.status();
+		f1.status();
 		
-		c.atack(b);
+		System.out.println("-----------------------------");
+		g1.atack(g2);
+		System.out.println("-----------------------------");
 		
-		c.status();
-		b.status();
+		g1.status();
+		g2.status();
+		f1.status();
+		
+		System.out.println("-----------------------------");
+		f1.atack(g1);
+		System.out.println("-----------------------------");
+		
+		g1.status();
+		g2.status();
+		f1.status();
+		
+
+		System.out.println("-----------------------------");
+		g2.atack(f1);
+		System.out.println("-----------------------------");
+		
+		g1.status();
+		g2.status();
+		f1.status();
 	}
 }

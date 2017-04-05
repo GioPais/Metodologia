@@ -17,10 +17,7 @@ public class Pokemon {
 		System.out.println("Pokemon created!");
 	}
 	
-	public void atack(Pokemon enemy){
-		this.damage=this.damage+enemy.atackdmg;
-		enemy.damage=enemy.damage+this.atackdmg;
-	}
+	
 	
 	public void status(){
 		System.out.println(this.name+" HP: "+this.hp+"   damage: "+this.damage);
