@@ -5,19 +5,31 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import org.junit.Test;
 
 public class GeneralTest {
 	
-	private Fire f;
-	private Fire f2;
+	private Electric el;
+	private Fighting fgt;
+	private Fire fr;
+	private Fire fr2;
 	private Grass gs;
+	private Ground gn;
+	private Normal nm;
+	private Psychic py;
+	private Water wt;
 	
 	@Before
 	public void setUp() throws Exception {
-		f = new Fire("torchic",100,10);
-		f2 = new Fire("Charmander",100,10);
+		el = new Electric("pikachu",100,10);
+		fgt = new Fighting("Hitmonlee",100,10);
+		fr = new Fire("torchic",100,10);
+		fr2 = new Fire("Charmander",100,10);
 		gs = new Grass("bulbasaur",100,10);
+		gn = new Ground("sandrew",100,10);
+		nm = new Normal("Snorlax",1000,10);
+		py = new Psychic("Alakazam",100,10);
+		wt = new Water("Squirtle",100,10);
+		
 	}
 	
 	
@@ -27,23 +39,32 @@ public class GeneralTest {
 	//}
 	
 	@Test
+	public void testHeal(){
+		fr.atack(fr2);
+		assertEquals(10,fr2.damage,0);
+		fr2.heal();
+		assertEquals(0,fr2.damage,0);
+	}
+	
+	@Test
 	public void testAtack(){
-		f.atack(f2);
-		assertEquals(10,f2.damage,0);
-		f2.heal();
+		fr.atack(fr2);
+		assertEquals(10,fr2.damage,0);
+		fr2.heal();
 	}
 	
 	@Test
 	public void testAtackRes(){
-		gs.atack(f);
-		assertEquals(-10,f.damage,0);
+		gs.atack(fr);
+		assertEquals(-10,fr.damage,0);
 	}
 	
 	@Test
 	public void testAtackVul(){
-		f.atack(gs);
+		fr.atack(gs);
 		assertEquals(20,gs.damage,0);
 		gs.heal();
 	}
 
 }
+

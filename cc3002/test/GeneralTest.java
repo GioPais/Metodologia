@@ -27,6 +27,14 @@ public class GeneralTest {
 	//}
 	
 	@Test
+	public void testHeal(){
+		f.atack(f2);
+		assertEquals(10,f2.damage,0);
+		f2.heal();
+		assertEquals(0,f2.damage,0);
+	}
+	
+	@Test
 	public void testAtack(){
 		f.atack(f2);
 		assertEquals(10,f2.damage,0);
