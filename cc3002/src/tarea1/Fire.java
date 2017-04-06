@@ -16,7 +16,7 @@ public class Fire extends Pokemon implements Poke {
 	@Override
 	public void atackedByGrass(Grass grass) {
 		
-		this.damage=this.damage+grass.atackdmg-20;
+		this.atackedRes(grass);
 		System.out.println(grass.name+" atack "+ this.name);
 	}
 
@@ -30,7 +30,7 @@ public class Fire extends Pokemon implements Poke {
 	@Override
 	public void atackedByWater(Water water) {
 		
-		this.damage=this.damage+water.atackdmg*2;
+		this.atackedVul(water);
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class Fire extends Pokemon implements Poke {
 	@Override
 	public void atackedByGround(Ground ground) {
 		
-		this.damage=this.damage+ground.atackdmg*2;
+		this.atackedVul(ground);
 	}
 
 	@Override

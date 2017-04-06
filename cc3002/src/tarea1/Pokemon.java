@@ -23,7 +23,43 @@ public class Pokemon {
 		System.out.println(this.name+" HP: "+this.hp+"   damage: "+this.damage);
 	}
 	
+	public void heal(){
+		this.damage=0;
+	}
+	
 	public void atackedBy(Pokemon e){
+		this.damage=this.damage+e.atackdmg;
+	}
+	
+	public void atackedByElectric(Pokemon e){
+		this.damage=this.damage+e.atackdmg;
+	}
+	
+	public void atackedByFighting(Pokemon e){
+		this.damage=this.damage+e.atackdmg;
+	}
+	
+	public void atackedByFire(Pokemon e){
+		this.damage=this.damage+e.atackdmg;
+	}
+	
+	public void atackedByGrass(Pokemon e){
+		this.damage=this.damage+e.atackdmg;
+	}
+	
+	public void atackedByGround(Pokemon e){
+		this.damage=this.damage+e.atackdmg;
+	}
+	
+	public void atackedByNormal(Pokemon e){
+		this.damage=this.damage+e.atackdmg;
+	}
+	
+	public void atackedByPsychic(Pokemon e){
+		this.damage=this.damage+e.atackdmg;
+	}
+	
+	public void atackedByWater(Pokemon e){
 		this.damage=this.damage+e.atackdmg;
 	}
 	
