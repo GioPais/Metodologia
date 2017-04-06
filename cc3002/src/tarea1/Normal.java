@@ -1,6 +1,6 @@
 package tarea1;
 
-public class Normal extends Pokemon {
+public class Normal extends Pokemon implements Poke {
 
 	public Normal(String n, int h, int ad) {
 		super(n, h, "Normal", ad);
