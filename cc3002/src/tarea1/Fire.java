@@ -30,7 +30,7 @@ public class Fire extends Pokemon implements Poke {
 	@Override
 	public void atackedByWater(Water water) {
 		// TODO Auto-generated method stub
-		
+		this.damage=this.damage+water.atackdmg*2;
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class Fire extends Pokemon implements Poke {
 	@Override
 	public void atackedByGround(Ground ground) {
 		// TODO Auto-generated method stub
-		
+		this.damage=this.damage+ground.atackdmg*2;
 	}
 
 	@Override
