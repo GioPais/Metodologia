@@ -26,5 +26,12 @@ public class Pokemon {
 	public void atackedBy(Pokemon e){
 		this.damage=this.damage+e.atackdmg;
 	}
-
+	
+	public void atackedRes(Pokemon e){
+		this.damage=this.damage+e.atackdmg-20;
+	}
+	
+	public void atackedVul(Pokemon e){
+		this.damage=this.damage+e.atackdmg*2;
+	}
 }
