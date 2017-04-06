@@ -2,9 +2,8 @@ package tarea1;
 
 import static org.junit.Assert.*;
 
-import measure.Before;
-import measure.Inch;
-import measure.Meter;
+import org.junit.Before;
+import org.junit.Test;
 
 import org.junit.Test;
 
@@ -23,6 +22,12 @@ public class GeneralTest {
 	@Test
 	public void test() {
 		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void test(){
+		f.atack(gs);
+		asserEquals(20,gs.damage,0.1);
 	}
 
 }

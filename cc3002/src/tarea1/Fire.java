@@ -23,7 +23,7 @@ public class Fire extends Pokemon implements Poke {
 	@Override
 	public void atackedByFire(Fire fire) {
 		// TODO Auto-generated method stub
-		this.damage=this.damage+fire.atackdmg;
+		this.atackedBy(fire);
 		System.out.println(fire.name+" atack "+ this.name);
 	}
 
@@ -36,7 +36,7 @@ public class Fire extends Pokemon implements Poke {
 	@Override
 	public void atackedByElectric(Electric electric) {
 		// TODO Auto-generated method stub
-		
+		this.atackedBy(electric);
 	}
 
 	@Override
@@ -48,19 +48,19 @@ public class Fire extends Pokemon implements Poke {
 	@Override
 	public void atackedByPsychic(Psychic psychic) {
 		// TODO Auto-generated method stub
-		
+		this.atackedBy(psychic);
 	}
 
 	@Override
 	public void atackedByFighting(Fighting fighting) {
 		// TODO Auto-generated method stub
-		
+		this.atackedBy(fighting);
 	}
 
 	@Override
 	public void atackedByNormal(Normal normal) {
 		// TODO Auto-generated method stub
-		
+		this.atackedBy(normal);
 	}
 
 }

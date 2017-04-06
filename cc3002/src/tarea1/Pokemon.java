@@ -23,7 +23,7 @@ public class Pokemon {
 		System.out.println(this.name+" HP: "+this.hp+"   damage: "+this.damage);
 	}
 	
-	public void atacked(Pokemon e){
+	public void atackedBy(Pokemon e){
 		this.damage=this.damage+e.atackdmg;
 	}
 
