@@ -22,5 +22,9 @@ public class Pokemon {
 	public void status(){
 		System.out.println(this.name+" HP: "+this.hp+"   damage: "+this.damage);
 	}
+	
+	public void atacked(Pokemon e){
+		this.damage=this.damage+e.atackdmg;
+	}
 
 }
