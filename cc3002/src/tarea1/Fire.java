@@ -14,53 +14,24 @@ public class Fire extends Pokemon implements Poke {
 	}
 
 	@Override
-	public void atackedByGrass(Grass grass) {
+	public void atackedByGrass(Pokemon grass) {
 		
 		this.atackedRes(grass);
-		System.out.println(grass.name+" atack "+ this.name);
 	}
 
-	@Override
-	public void atackedByFire(Fire fire) {
-		
-		this.atackedBy(fire);
-		System.out.println(fire.name+" atack "+ this.name);
-	}
 
 	@Override
-	public void atackedByWater(Water water) {
+	public void atackedByWater(Pokemon water) {
 		
 		this.atackedVul(water);
 	}
 
-	@Override
-	public void atackedByElectric(Electric electric) {
-		
-		this.atackedBy(electric);
-	}
 
 	@Override
-	public void atackedByGround(Ground ground) {
+	public void atackedByGround(Pokemon ground) {
 		
 		this.atackedVul(ground);
 	}
 
-	@Override
-	public void atackedByPsychic(Psychic psychic) {
-		
-		this.atackedBy(psychic);
-	}
-
-	@Override
-	public void atackedByFighting(Fighting fighting) {
-		
-		this.atackedBy(fighting);
-	}
-
-	@Override
-	public void atackedByNormal(Normal normal) {
-		
-		this.atackedBy(normal);
-	}
 
 }

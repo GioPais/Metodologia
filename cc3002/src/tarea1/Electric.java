@@ -15,52 +15,17 @@ public class Electric extends Pokemon implements Poke {
 	}
 
 	@Override
-	public void atackedByGrass(Grass grass) {
+	public void atackedByElectric(Pokemon electric) {
 		
-		this.atackedBy(grass);
-		
+		this.atackedRes(electric);
 	}
 
 	@Override
-	public void atackedByFire(Fire fire) {
+	public void atackedByGround(Pokemon ground) {
 		
-		this.atackedBy(fire);
+		this.atackedVul(ground);
 	}
 
-	@Override
-	public void atackedByWater(Water water) {
-		
-		this.atackedBy(water);
-	}
 
-	@Override
-	public void atackedByElectric(Electric electric) {
-		
-		this.damage=this.damage+electric.atackdmg-20;
-	}
-
-	@Override
-	public void atackedByGround(Ground ground) {
-		
-		this.damage=this.damage+ground.atackdmg*2;
-	}
-
-	@Override
-	public void atackedByPsychic(Psychic psychic) {
-		
-		this.atackedBy(psychic);
-	}
-
-	@Override
-	public void atackedByFighting(Fighting fighting) {
-	
-		this.atackedBy(fighting);
-	}
-
-	@Override
-	public void atackedByNormal(Normal normal) {
-		
-		this.atackedBy(normal);
-	}
 
 }

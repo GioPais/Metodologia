@@ -16,57 +16,23 @@ public class Grass extends Pokemon implements Poke {
 	}
 
 	@Override
-	public void atackedByGrass(Grass grass) {
-		// TODO Auto-generated method stub
-		this.damage=this.damage+grass.atackdmg;
-		System.out.println(grass.name+" atack "+ this.name);
-	}
-
-	@Override
-	public void atackedByFire(Fire fire) {
-		// TODO Auto-generated method stub
-		this.damage=this.damage+fire.atackdmg*2;
-		System.out.println(fire.name+" atack "+ this.name);
-	}
-
-	@Override
-	public void atackedByWater(Water water) {
-		// TODO Auto-generated method stub
+	public void atackedByFire(Pokemon fire) {
 		
+		this.atackedVul(fire);
 	}
 
 	@Override
-	public void atackedByElectric(Electric electric) {
-		// TODO Auto-generated method stub
+	public void atackedByWater(Pokemon water) {
 		
+		this.atackedRes(water);
 	}
+
 
 	@Override
-	public void atackedByGround(Ground ground) {
-		// TODO Auto-generated method stub
+	public void atackedByGround(Pokemon ground) {
 		
+		this.atackedRes(ground);
 	}
 
-	@Override
-	public void atackedByPsychic(Psychic psychic) {
-		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	public void atackedByFighting(Fighting fighting) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void atackedByNormal(Normal normal) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-
-	
-
 }
