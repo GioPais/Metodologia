@@ -11,6 +11,10 @@ package tarea1;
  */
 public class Fighting extends Pokemon implements Poke{
 
+	/**
+	 * Constructor de la clase. 
+	 * Igual al constructor de clase padre pero con tipo fijo.
+	 */
 	public Fighting(String n, int h, int ad) {
 		super(n, h, "Fighting", ad);
 	}

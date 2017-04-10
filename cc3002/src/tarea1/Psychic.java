@@ -11,6 +11,10 @@ package tarea1;
  */
 public class Psychic extends Pokemon implements Poke {
 
+	/**
+	 * Constructor de la clase. 
+	 * Igual al constructor de clase padre pero con tipo fijo.
+	 */
 	public Psychic(String n, int h, int ad) {
 		super(n, h, "Psychic", ad);
 	}

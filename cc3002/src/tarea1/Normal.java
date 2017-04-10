@@ -10,6 +10,10 @@ package tarea1;
  */
 public class Normal extends Pokemon implements Poke {
 
+	/**
+	 * Constructor de la clase. 
+	 * Igual al constructor de clase padre pero con tipo fijo.
+	 */
 	public Normal(String n, int h, int ad) {
 		super(n, h, "Normal", ad);
 	}

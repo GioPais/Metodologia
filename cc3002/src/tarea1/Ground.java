@@ -11,6 +11,10 @@ package tarea1;
  */
 public class Ground extends Pokemon implements Poke {
 
+	/**
+	 * Constructor de la clase. 
+	 * Igual al constructor de clase padre pero con tipo fijo.
+	 */
 	public Ground(String n, int h, int ad) {
 		super(n, h, "Ground", ad);
 	}

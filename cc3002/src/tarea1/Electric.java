@@ -8,7 +8,11 @@ package tarea1;
  *
  */
 public class Electric extends Pokemon implements Poke {
-
+	
+	/**
+	 * Constructor de la clase. 
+	 * Igual al constructor de clase padre pero con tipo fijo.
+	 */
 	public Electric(String n, int h, int ad) {
 		
 		super(n, h, "Electric", ad);
