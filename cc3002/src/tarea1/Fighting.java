@@ -1,5 +1,14 @@
 package tarea1;
 
+
+/**
+ * 
+ * @author Giovanni Pais
+ * 
+ * Esta clase establece las caracteristicas de un pokemon del tipo pelea.
+ * Se establecen sus metodos propios dependiendo de los atributos de clases.
+ *
+ */
 public class Fighting extends Pokemon implements Poke{
 
 	public Fighting(String n, int h, int ad) {
@@ -8,8 +17,10 @@ public class Fighting extends Pokemon implements Poke{
 
 	@Override
 	public void atack(Poke p) {
-		p.atackedByFighting(this);
 		
+		if(!this.knocketOut()){
+			p.atackedByFighting(this);
+		}
 	}
 
 	

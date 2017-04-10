@@ -26,6 +26,7 @@ public class AtackTest {
 	private Ground gn;
 	private Normal nm;
 	private Psychic py;
+	private Psychic py2;
 	private Water wt;
 	
 	@Before
@@ -39,6 +40,7 @@ public class AtackTest {
 		gn = new Ground("sandrew",100,10);
 		nm = new Normal("Snorlax",1000,10);
 		py = new Psychic("Alakazam",100,10);
+		py2 = new Psychic("Abra",100,10);
 		wt = new Water("Squirtle",100,10);
 		
 	}
@@ -62,9 +64,9 @@ public class AtackTest {
 	
 	//Resistente
 	public void testElecticVsElectric(){
-		el1.atack(el);
-		assertEquals(-10,el.damage,0);
-		el.heal();
+		el.atack(el1);
+		assertEquals(0,el1.damage,0);
+		el1.heal();
 	}
 	
 	//-------------------------------------------------------------------------------------------
@@ -89,11 +91,34 @@ public class AtackTest {
 	@Test
 	public void testGrassVsFire(){
 		gs.atack(fr2);
-		assertEquals(-10,fr2.damage,0);
+		assertEquals(0,fr2.damage,0);
 		fr2.heal();
 	}
+
 	
-	//-------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+	//Fighting
+	
+	//Vulnerable
+	@Test
+	public void testPychicVsFighting(){
+		py.atack(fgt);
+		assertEquals(20,fgt.damage,0);
+		fgt.heal();
+	}
+	
+		
+	//Resistentes
+	@Test
+	public void testGroundVsFighting(){
+		gn.atack(fgt);
+		assertEquals(0,fgt.damage,0);
+		fgt.heal();
+	}
+	
+		
+	
+//-------------------------------------------------------------------------------------------
 	//GRASS
 	
 	//Vulnerable
@@ -108,18 +133,18 @@ public class AtackTest {
 	@Test
 	public void testGroundVsGras(){
 		gn.atack(gs);
-		assertEquals(-10,gs.damage,0);
+		assertEquals(0,gs.damage,0);
 		gs.heal();
 	}
 		
 	@Test
 	public void testWaterVsGrass(){
 		wt.atack(gs);
-		assertEquals(-10,gs.damage,0);
+		assertEquals(0,gs.damage,0);
 		gs.heal();
 	}
 	
-	//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
 	//GROUND
 	
 	//Vulnerable
@@ -141,16 +166,74 @@ public class AtackTest {
 	@Test
 	public void testNormalVsGround(){
 		nm.atack(gn);
-		assertEquals(-10,gn.damage,0);
+		assertEquals(0,gn.damage,0);
 		gn.heal();
 	}
 	
 	@Test
 	public void testElectricVsGround(){
 		el.atack(gn);
-		assertEquals(-10,gn.damage,0);
+		assertEquals(0,gn.damage,0);
 		gn.heal();
 	}
 	
+
+	//--------------------------------------------------------------------------------------------------
+	//NORMAL
+		
+	//Vulnerable
+	@Test
+	public void testFightingVsNormal(){
+		fgt.atack(nm);
+		assertEquals(20,nm.damage,0);
+		nm.heal();
+	}
 	
+	//Resistentes
+	@Test
+	public void testPsychicVsNormal(){
+		py.atack(nm);
+		assertEquals(0,nm.damage,0);
+		nm.heal();
+	}
+	
+//--------------------------------------------------------------------------------------------------
+	//PSYCHIC
+	
+	//Vulnerable
+	@Test
+	public void testPsychicVsPsychic(){
+		py.atack(py2);
+		assertEquals(20,py2.damage,0);
+		py2.heal();
+	}
+	
+	
+//--------------------------------------------------------------------------------------------------
+	//WATER
+	
+	//Vulnerable
+	@Test
+	public void testGrassVsWater(){
+		gs.atack(wt);
+		assertEquals(20,wt.damage,0);
+		wt.heal();
+	}
+	
+	@Test
+	public void testElectricVsWater(){
+		el.atack(wt);
+		assertEquals(20,wt.damage,0);
+		wt.heal();
+	}
+	
+	//Resistentes
+		@Test
+	public void testFireVsWater(){
+		fr.atack(wt);
+		assertEquals(0,wt.damage,0);
+		wt.heal();
+	}
+		
+		
 }

@@ -1,5 +1,14 @@
 package tarea1;
 
+
+/**
+ * 
+ * @author Giovanni Pais
+ * 
+ * Esta clase establece las caracteristicas de un pokemon del tipo psiquico.
+ * Se establecen sus metodos propios dependiendo de los atributos de clases.
+ *
+ */
 public class Psychic extends Pokemon implements Poke {
 
 	public Psychic(String n, int h, int ad) {
@@ -9,7 +18,9 @@ public class Psychic extends Pokemon implements Poke {
 	@Override
 	public void atack(Poke p) {
 		
-		p.atackedByPsychic(this);
+		if(!this.knocketOut()){
+			p.atackedByPsychic(this);
+		}
 	}
 
 	

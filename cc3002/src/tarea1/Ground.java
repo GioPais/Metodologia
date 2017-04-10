@@ -1,5 +1,14 @@
 package tarea1;
 
+
+/**
+ * 
+ * @author Giovanni Pais
+ * 
+ * Esta clase establece las caracteristicas de un pokemon del tipo tierra.
+ * Se establecen sus metodos propios dependiendo de los atributos de clases.
+ *
+ */
 public class Ground extends Pokemon implements Poke {
 
 	public Ground(String n, int h, int ad) {
@@ -9,7 +18,9 @@ public class Ground extends Pokemon implements Poke {
 	@Override
 	public void atack(Poke p) {
 		
-		p.atackedByGround(this);
+		if(!this.knocketOut()){
+			p.atackedByGround(this);
+		}
 	}
 
 	@Override

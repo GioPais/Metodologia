@@ -1,5 +1,14 @@
 package tarea1;
 
+
+/**
+ * 
+ * @author Giovanni Pais
+ * 
+ * Esta clase establece las caracteristicas de un pokemon del tipo fuego.
+ * Se establecen sus metodos propios dependiendo de los atributos de clases.
+ *
+ */
 public class Fire extends Pokemon implements Poke {
 
 	public Fire(String n, int h, int ad) {
@@ -9,8 +18,9 @@ public class Fire extends Pokemon implements Poke {
 	@Override
 	public void atack(Poke p) {
 		
-		p.atackedByFire(this);
-		
+		if(!this.knocketOut()){
+			p.atackedByFire(this);
+		}
 	}
 
 	@Override
