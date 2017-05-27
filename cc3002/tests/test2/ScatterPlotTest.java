@@ -6,7 +6,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-import tarea2.Plot;
 import tarea2.ScatterPlot;
 
 public class ScatterPlotTest {
