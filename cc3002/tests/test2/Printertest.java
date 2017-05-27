@@ -10,10 +10,7 @@ import tarea2.ScatterPlot;
 
 public class Printertest {
 
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
+	
 	
 private ScatterPlot SP;
 
