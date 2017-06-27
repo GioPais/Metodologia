@@ -3,18 +3,14 @@ package tarea3;
 import java.util.List;
 
 import javafx.scene.chart.Axis;
-import javafx.scene.chart.LineChart;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
 
-public class ScatterPlot<T1, T2> {
-	private Axis<T1> xAxis;
-	private Axis<T2> yAxis;
+public class ScatterPlot<T1, T2> extends Plot<T1,T2>{
 	private ScatterChart<T1, T2> plot;
 
 	public ScatterPlot(Axis<T1> xAxis, Axis<T2> yAxis){
-		this.xAxis = xAxis;
-		this.yAxis = yAxis;
+		super(xAxis,yAxis);
 		plot = new ScatterChart<T1, T2>(xAxis, yAxis);
 	}
 
@@ -35,14 +31,6 @@ public class ScatterPlot<T1, T2> {
 
 	public void setTitle(String title){
 		plot.setTitle(title);
-	}
-
-	public void setXLabel(String label){
-		xAxis.setLabel(label);
-	}
-
-	public void setYLabel(String label){
-		yAxis.setLabel(label);
 	}
 
 	public ScatterChart<T1, T2> getPlot(){

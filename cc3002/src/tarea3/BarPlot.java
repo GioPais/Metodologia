@@ -6,14 +6,11 @@ import javafx.scene.chart.Axis;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
 
-public class BarPlot<T1, T2> {
-	private Axis<T1> xAxis;
-	private Axis<T2> yAxis;
+public class BarPlot<T1, T2> extends Plot<T1,T2> {
 	private BarChart<T1, T2> plot;
 
 	public BarPlot(Axis<T1> xAxis, Axis<T2> yAxis){
-		this.xAxis = xAxis;
-		this.yAxis = yAxis;
+		super(xAxis,yAxis);
 		plot = new BarChart<T1, T2>(xAxis, yAxis);
 	}
 
@@ -34,14 +31,6 @@ public class BarPlot<T1, T2> {
 
 	public void setTitle(String title){
 		plot.setTitle(title);
-	}
-
-	public void setXLabel(String label){
-		xAxis.setLabel(label);
-	}
-
-	public void setYLabel(String label){
-		yAxis.setLabel(label);
 	}
 
 	public BarChart<T1, T2> getPlot(){

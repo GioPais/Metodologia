@@ -6,14 +6,11 @@ import javafx.scene.chart.Axis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 
-public class LinePlot<T1, T2> {
-	private Axis<T1> xAxis;
-	private Axis<T2> yAxis;
+public class LinePlot<T1, T2> extends Plot<T1,T2> {
 	private LineChart<T1, T2> plot;
 
 	public LinePlot(Axis<T1> xAxis, Axis<T2> yAxis){
-		this.xAxis = xAxis;
-		this.yAxis = yAxis;
+		super(xAxis,yAxis);
 		plot = new LineChart<T1, T2>(xAxis, yAxis);
 	}
 
@@ -34,14 +31,6 @@ public class LinePlot<T1, T2> {
 
 	public void setTitle(String title){
 		plot.setTitle(title);
-	}
-
-	public void setXLabel(String label){
-		xAxis.setLabel(label);
-	}
-
-	public void setYLabel(String label){
-		yAxis.setLabel(label);
 	}
 
 	public LineChart<T1, T2> getPlot(){
