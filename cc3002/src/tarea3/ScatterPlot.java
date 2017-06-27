@@ -19,16 +19,10 @@ public class ScatterPlot<T1, T2> extends Plot<T1,T2> {
 	}
 
 	public void addSeries(List<T1> xData, List<T2> yData, String seriesName){
-		if(xData.size() != yData.size())
-			throw new IllegalArgumentException("X and Y data must have the same size");
-		XYChart.Series<T1, T2> series = new XYChart.Series<>();
-		for(int i=0; i<xData.size(); i++){
-			series.getData().add(new XYChart.Data<>(xData.get(i), yData.get(i)));
-		}
-		series.setName(seriesName);
+		XYChart.Series<T1, T2> series= super.setSeries(xData,yData,seriesName);
 		plot.getData().add(series);
 	}
-
+	
 	public void setTitle(String title){
 		plot.setTitle(title);
 	}
