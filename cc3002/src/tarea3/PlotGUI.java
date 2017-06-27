@@ -26,6 +26,8 @@ import javafx.stage.Stage;
 public class PlotGUI extends Application{
 
 	private String plotType;
+	private CDataReader cdr = new CDataReader();
+	private TDataReader tdr = new TDataReader();
 	
     @Override public void start(Stage stage) {
         stage.setTitle("JPlot");
@@ -47,10 +49,14 @@ public class PlotGUI extends Application{
 				try{
 					if(file == null){throw new IOException("No file found");}
 					if (plotType.equals("BarPlot")) {
-						System.out.println("archivo tipo BarPlot");
+						//System.out.println("archivo tipo BarPlot");
+						cdr.loadFile(file);
+						cdr.extractDataInfo();
 					}
 					else {
-						System.out.println("archivo tipo NoBarPlot");
+						//System.out.println("archivo tipo NoBarPlot");
+						tdr.loadFile(file);
+						tdr.extractDataInfo();
 					}
 				}
 				catch (IOException e) {e.printStackTrace();}
@@ -96,20 +102,22 @@ public class PlotGUI extends Application{
     	if(plotType.equals("BarPlot")){
     		List<String> x = Arrays.asList(new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"});
             List<Number> y = Arrays.asList(new Number[]{23, 14, 15, 24, 34, 36, 22, 45, 42, 17, 29, 25});
-            plot.setTitle("BarPlot Sample");
+            plot.setTitle(cdr.getTitle());
+            plot.setXLabel(cdr.getXLabel());
+            plot.setYLabel(cdr.getYLabel());          
             plot.addSeries(x, y, "Portfolio #1");
     		
     	}
     	else{
     		List<Number> x = Arrays.asList(new Number[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12});
             List<Number> y = Arrays.asList(new Number[]{23, 14, 15, 24, 34, 36, 22, 45, 42, 17, 29, 25});
-            plot.setTitle("NoBarPlot Sample");
+            plot.setTitle(tdr.getTitle());
+            plot.setXLabel(tdr.getXLabel());
+            plot.setYLabel(tdr.getYLabel());           
             plot.addSeries(x, y, "Portfolio #1");
     		
     	}
     	
-    	plot.setXLabel("Number of month");
-        plot.setYLabel("Millions of US$");
         return plot.getPlot();
 	}
 
