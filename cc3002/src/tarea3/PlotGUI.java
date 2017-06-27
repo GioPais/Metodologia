@@ -49,12 +49,11 @@ public class PlotGUI extends Application{
 				try{
 					if(file == null){throw new IOException("No file found");}
 					if (plotType.equals("BarPlot")) {
-						//System.out.println("archivo tipo BarPlot");
 						cdr.loadFile(file);
 						cdr.extractDataInfo();
+						cdr.extractPlotData();
 					}
 					else {
-						//System.out.println("archivo tipo NoBarPlot");
 						tdr.loadFile(file);
 						tdr.extractDataInfo();
 					}
@@ -98,24 +97,33 @@ public class PlotGUI extends Application{
     protected Node buildPlot() {
     	
     	IPlot plot = PlotFactory.getPlot(plotType);
+    	plot.clear();
     	
     	if(plotType.equals("BarPlot")){
-    		List<String> x = Arrays.asList(new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"});
-            List<Number> y = Arrays.asList(new Number[]{23, 14, 15, 24, 34, 36, 22, 45, 42, 17, 29, 25});
+    		List<String> x;// = Arrays.asList(new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"});
+            List<Number> y;// = Arrays.asList(new Number[]{23, 14, 15, 24, 34, 36, 22, 45, 42, 17, 29, 25});
             plot.setTitle(cdr.getTitle());
             plot.setXLabel(cdr.getXLabel());
-            plot.setYLabel(cdr.getYLabel());          
-            plot.addSeries(x, y, "Portfolio #1");
-    		
+            plot.setYLabel(cdr.getYLabel());
+            x=cdr.getXAxis();
+            for(int i=1;i<cdr.getSeriesNames().size();++i){
+            	y=cdr.getYAxis(i);
+            	plot.addSeries(x, y, cdr.getSeriesNames().get(i));
+        		
+            }
+            
     	}
     	else{
     		List<Number> x = Arrays.asList(new Number[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12});
             List<Number> y = Arrays.asList(new Number[]{23, 14, 15, 24, 34, 36, 22, 45, 42, 17, 29, 25});
             plot.setTitle(tdr.getTitle());
             plot.setXLabel(tdr.getXLabel());
-            plot.setYLabel(tdr.getYLabel());           
-            plot.addSeries(x, y, "Portfolio #1");
-    		
+            plot.setYLabel(tdr.getYLabel());
+            for(String name:tdr.getSeriesNames()){
+            	plot.addSeries(x, y, name);
+        		
+            }
+            
     	}
     	
         return plot.getPlot();

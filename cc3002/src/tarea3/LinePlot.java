@@ -30,4 +30,8 @@ public class LinePlot<T1, T2> extends Plot<T1,T2> {
 	public LineChart<T1, T2> getPlot(){
 		return plot;
 	}
+	
+	public void clear(){
+		plot.getData().clear();
+	}
 }

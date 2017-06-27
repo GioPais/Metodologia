@@ -14,6 +14,7 @@ public interface IPlot<T1,T2> {
 	void addSeries(List<T1> xData, List<T2> yData, String seriesName);
 	public void setTitle(String title);
 	public XYChart<T1, T2> getPlot();
+	public void clear();
 	
 	
 	

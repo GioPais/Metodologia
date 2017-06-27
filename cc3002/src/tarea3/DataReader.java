@@ -33,6 +33,10 @@ public abstract class DataReader {
 		return yLabel;
 	}
 	
+	public ArrayList<String> getSeriesNames(){
+		return seriesNames;
+	}
+	
 	public void extractDataInfo() throws FileNotFoundException {
 		try {
 			FileReader fr = new FileReader(file);

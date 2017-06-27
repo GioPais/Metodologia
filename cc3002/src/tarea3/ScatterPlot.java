@@ -30,4 +30,8 @@ public class ScatterPlot<T1, T2> extends Plot<T1,T2> {
 	public ScatterChart<T1, T2> getPlot(){
 		return plot;
 	}
+	
+	public void clear(){
+		plot.getData().clear();
+	}
 }
