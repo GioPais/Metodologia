@@ -8,7 +8,7 @@ import javafx.scene.chart.Axis;
  * @param <T1> 
  * @param <T2>
  */
-public abstract class Plot<T1,T2> {
+public abstract class Plot<T1,T2> implements IPlot<T1,T2>{
 	protected Axis<T1> xAxis;
 	protected Axis<T2> yAxis;
 	
