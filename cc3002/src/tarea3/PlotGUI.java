@@ -1,6 +1,7 @@
 package tarea3;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -42,6 +43,20 @@ public class PlotGUI extends Application{
 			public void handle(ActionEvent event) {
 				File file = dataChooser.showOpenDialog(stage);
 				/**do things with file**/
+				
+				try{
+					if(file == null){throw new IOException("No file found");}
+					if (plotType.equals("BarPlot")) {
+						System.out.println("archivo tipo BarPlot");
+					}
+					else {
+						System.out.println("archivo tipo NoBarPlot");
+					}
+				}
+				catch (IOException e) {e.printStackTrace();}
+				
+				
+				
 			}
 		});
 
