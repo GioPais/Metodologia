@@ -21,7 +21,13 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-
+/**
+ * Clase principal que implementa Java FX para realizar el plot.
+ * Se encuentra la configuracion de la ventana y los botones.
+ * Se llama a las clases encargadas de parsear los datos y las clases encargadas de cargar los datos del plot.
+ * @author Giovanni Pais
+ * @since 2017-06-27
+ */
 
 public class PlotGUI extends Application{
 

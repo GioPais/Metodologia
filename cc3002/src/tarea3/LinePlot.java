@@ -5,7 +5,13 @@ import java.util.List;
 import javafx.scene.chart.Axis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
-
+/**
+ * Clase encargada del plot del tipo LinePlot con metodos y el chart adecuado
+ @author Giovanni Pais
+ *
+ * @param <T1> informacion del eje X de los graficos
+ * @param <T2> informacion del eje Y de los graficos
+ */
 public class LinePlot<T1, T2> extends Plot<T1,T2> {
 	private LineChart<T1, T2> plot;
 

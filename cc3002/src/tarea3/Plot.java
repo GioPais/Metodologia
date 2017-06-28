@@ -5,11 +5,11 @@ import java.util.List;
 import javafx.scene.chart.Axis;
 import javafx.scene.chart.XYChart;
 /**
- * 
+ * Clase abstracta encargada de todos los tipos de plots, contiene metodos comunes e objetos que guardan informacion de los ejes.
  * @author Giovanni Pais
  *
- * @param <T1> 
- * @param <T2>
+ * @param <T1> informacion del eje X de los graficos
+ * @param <T2> informacion del eje Y de los graficos
  */
 public abstract class Plot<T1,T2> implements IPlot<T1,T2>{
 	protected Axis<T1> xAxis;

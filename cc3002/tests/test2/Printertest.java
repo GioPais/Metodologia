@@ -12,7 +12,7 @@ public class Printertest {
 
 	
 	
-private ScatterPlot SP;
+	private ScatterPlot SP;
 
 	private PlotPrinter p;
 	

@@ -5,7 +5,13 @@ import java.util.List;
 import javafx.scene.chart.Axis;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
-
+/**
+ * Clase encargada del plot del tipo BarPlot con metodos y el chart adecuado
+ * @author Giovanni Pais
+ *
+ * @param <T1> informacion del eje X de los graficos
+ * @param <T2> informacion del eje Y de los graficos
+ */
 public class BarPlot<T1, T2> extends Plot<T1,T2> {
 	private BarChart<T1, T2> plot;
 

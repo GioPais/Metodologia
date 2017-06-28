@@ -6,7 +6,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-
+/**
+ * Clase encargada de hacer el parser de los archivos del tipo cdata.
+ * @autor Giovanni Pais
+ */
 public class CDataReader extends DataReader{
 	
 	private ArrayList<CData> series = new ArrayList<CData>();

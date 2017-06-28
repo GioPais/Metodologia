@@ -5,7 +5,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-
+/**
+ * Clase encargada de hacer el parser de los archivos del tipo tdata.
+ * @autor Giovanni Pais
+ */
 public class TDataReader extends DataReader {
 
 	private ArrayList<TData> series = new ArrayList<TData>();

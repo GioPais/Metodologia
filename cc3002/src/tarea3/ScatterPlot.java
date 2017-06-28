@@ -5,7 +5,13 @@ import java.util.List;
 import javafx.scene.chart.Axis;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
-
+/**
+ * Clase encargada del plot del tipo ScatterPlot con metodos y el chart adecuado
+ @author Giovanni Pais
+ *
+ * @param <T1> informacion del eje X de los graficos
+ * @param <T2> informacion del eje Y de los graficos
+ */
 public class ScatterPlot<T1, T2> extends Plot<T1,T2> {
 	private ScatterChart<T1, T2> plot;
 
