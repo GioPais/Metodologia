@@ -39,8 +39,7 @@ public class CDataReader extends DataReader{
             
         	line2=line.trim().replace(" ","");
             lineData = line2.split(",");
-            //Verificar excepciones
-            
+            //Verificar excepciones    
             if(lineData.length>seriesNames.size()){
 				System.out.println("Wrong Data!");
 			}
