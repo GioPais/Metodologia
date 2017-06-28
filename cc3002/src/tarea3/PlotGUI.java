@@ -56,6 +56,7 @@ public class PlotGUI extends Application{
 					else {
 						tdr.loadFile(file);
 						tdr.extractDataInfo();
+						tdr.extractPlotData();
 					}
 				}
 				catch (IOException e) {e.printStackTrace();}
@@ -106,7 +107,7 @@ public class PlotGUI extends Application{
             plot.setXLabel(cdr.getXLabel());
             plot.setYLabel(cdr.getYLabel());
             x=cdr.getXAxis();
-            for(int i=1;i<cdr.getSeriesNames().size();++i){
+            for(int i=0;i<cdr.getSeriesNames().size();i++){
             	y=cdr.getYAxis(i);
             	plot.addSeries(x, y, cdr.getSeriesNames().get(i));
         		
@@ -114,19 +115,22 @@ public class PlotGUI extends Application{
             
     	}
     	else{
-    		List<Number> x = Arrays.asList(new Number[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12});
-            List<Number> y = Arrays.asList(new Number[]{23, 14, 15, 24, 34, 36, 22, 45, 42, 17, 29, 25});
+    		List<Number> x;// = Arrays.asList(new Number[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12});
+            List<Number> y;// = Arrays.asList(new Number[]{23, 14, 15, 24, 34, 36, 22, 45, 42, 17, 29, 25});
             plot.setTitle(tdr.getTitle());
             plot.setXLabel(tdr.getXLabel());
             plot.setYLabel(tdr.getYLabel());
-            for(String name:tdr.getSeriesNames()){
-            	plot.addSeries(x, y, name);
+            for(int i=0;i<tdr.getSeriesNames().size();i++){
+            	x=tdr.getXAxis(i);
+            	y=tdr.getYAxis(i);
+            	plot.addSeries(x, y, tdr.getSeriesNames().get(i));
         		
             }
             
     	}
     	
         return plot.getPlot();
+        
 	}
 
 	public static void main(String[] args) {

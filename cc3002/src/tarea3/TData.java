@@ -15,6 +15,14 @@ public class TData {
 		this.serieIndex = Integer.parseInt(serieIndex);
 	}
 	
+	public TData(String[] line) throws IOException{
+		
+		this.xValues=Integer.parseInt(line[0]);
+		this.yValues=Integer.parseInt(line[1]);
+		this.serieIndex=Integer.parseInt(line[2]);
+		
+	}
+	
 	public Number getXValues() {
 		return xValues;
 	}
